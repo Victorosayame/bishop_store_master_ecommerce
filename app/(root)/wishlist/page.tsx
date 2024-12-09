@@ -15,6 +15,7 @@ const WishlistPage = () => {
   const [wishlist, setWishlist] = useState<ProductType[]>([])
 
   const getUser = async () => {
+    setLoading(true)
     try {
       const res = await fetch("/api/users")
       const data = await res.json()
